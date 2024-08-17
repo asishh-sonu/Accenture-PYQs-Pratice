@@ -1,0 +1,26 @@
+You are given an integer 'n'function to calculate and
+return the sum of the digits in 'n' after converting it to its binary
+representation.
+For example, 15, which has a binary representation of 1111, should
+return 4.
+
+Answers ------
+import java.util.Scanner;
+public class Asish{
+    
+         public static int sumOfBinaryDigits(int n) {
+       int sum =0;
+       while( n >0){
+           sum += n &1;
+           n>>=1;
+       }
+       return sum;
+    }
+    
+    
+    public static void main(String args[]){
+        int n = 15;
+        int result = sumOfBinaryDigits(n);
+        System.out.println(result);
+    }
+}
