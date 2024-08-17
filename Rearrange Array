@@ -1,0 +1,51 @@
+You are required to implement the following function:
+int ReArrangeArray( int arr, int len); The function accepts an array 'arr' of length 'len' as
+its argument. You are required to re-arrange the elements : positive integers are on right,
+but retaining their order of appearance as in the original array. Return the modified
+array.
+Note:
+All operations are to be performed in-place i.e. you cannot use another array.
+If 'arr' is NULL (None, in case of Python), then return NULL.
+Assumption: Consider 0 as positive number.
+Example:
+Input: arr: 1 7-5 9-12 15
+Output:
+-5 -12 1 7 9 15
+Explanation:
+Re-arranging the elements of array {1, 7, -5, 9, -12, 15) such that negative integers are on
+left and positive integers are (1,7, 9, 15) at the right.
+Sample input
+arr: -6 10 8 -5 -14 -17 23 -20 -18 -19
+Sample Output
+-6-5-14 -17 -20 -18 -19 10 8 23
+Instructions
+
+
+Answer - 
+public class ReArrangeArray {
+    public static int[] ReArrangeArray(int[] arr, int len) {
+        if(arr == null){
+            return null;
+        }
+        int i = 0;
+        for(int j =0;j<len;j++){
+            if(arr[j] < 0){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                i++;
+            }
+        }
+        return arr;
+}
+    public static void main(String[] args) {
+        int[] arr = {1, 7, -5, 9, -12, 15};
+        int len = arr.length;
+
+        int[] result = ReArrangeArray(arr, len);
+
+        for (int i = 0; i < len; i++) {
+            System.out.print(result[i] + " ");
+        }
+    }
+}
