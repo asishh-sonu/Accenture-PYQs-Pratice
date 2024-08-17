@@ -1,0 +1,27 @@
+import java.util.*;
+import java.util.Scanner;
+
+class Asish{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your weight in kg: ");
+        int weight = sc.nextInt();
+        System.out.print("Enter your height in meters: ");
+        float height = sc.nextFloat();
+        float BMI = (weight/(height*height));
+        
+        if(BMI < 18){
+            System.out.println(0);
+        }
+        else if (BMI>=18 && BMI<25){
+            System.out.println(1);
+        } else if(BMI>=25 && BMI<30){
+            System.out.println(2);
+        } else if(BMI>=30 && BMI<40){
+            System.out.println(3);
+        }
+        else {
+            System.out.println(4);
+        }
+    }
+}
