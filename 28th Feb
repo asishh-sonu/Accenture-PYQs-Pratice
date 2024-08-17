@@ -1,0 +1,28 @@
+Input:
+A single line of text containing words separated by spaces. The input
+string consists of only printable ASCII characters.
+Output:
+The string with words reversed in order.
+Example:
+Input:
+Hello World
+Output:
+World Hello
+Answer --------
+import java.util.Scanner;
+public class Asish{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        
+        String [] arr = str.split(" ");
+        for(int i = arr.length-1;i>=0;i--){
+            if(i== arr.length-1){
+                System.out.print(arr[i]);
+            }
+            else {
+                System.out.print(" " + arr[i]);
+            }
+        }
+    }
+}
