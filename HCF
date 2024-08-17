@@ -1,0 +1,28 @@
+You have been given two integers.
+You have to calculate the the Highest Common Divisors , Which is also known as HCF
+Example :
+input :
+a:
+675
+b:
+835
+Output: 5
+
+
+Answer --- 
+public class Asish{
+    public static int calculateHCF(int a, int b){
+        while(b != 0){
+            int temp = b;
+            b = a %b;
+            a = temp;
+        }
+        return a;
+    }
+    public static void main(String args[]){
+        int a = 675;
+        int b = 835;
+        int hcf = calculateHCF(a,b);
+        System.out.println(hcf);
+    }
+}
