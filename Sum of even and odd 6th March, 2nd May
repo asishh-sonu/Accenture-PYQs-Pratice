@@ -1,0 +1,41 @@
+Write the function sumevenandodd(arr) to solve this problem.
+The function should take an array of integers as input and return a
+tuple of two integers the first element being the sum of even numbers,
+and the second element being the sum of odd numbers
+Input Constraints:
+The number of elements in the array (N) is an integer where 1 <=N<=
+10^6.
+Each element in the array is an integer where -10^6 <= element <=
+10^6.
+Output Constraints:
+The function should return a tuple containing two integers:
+the sum of even numbers and the sum of odd numbers.
+For example, input:
+3
+10
+9
+11
+
+
+Answer -------
+import java.util.*;
+public class Catu{
+    public static int[] sumofEvenandOdd(int[] arr){
+        int sumEven = 0;
+        int sumOdd = 0;
+        for(int i =0;i<arr.length;i++){
+            if(arr[i] % 2 == 0){
+                sumEven = sumEven+arr[i];
+            } else{
+                sumOdd = sumOdd + arr[i];
+            }
+        }
+        return new int[]{sumEven,sumOdd};
+    }
+    public static void main(String args[]){
+        int arr[] = {3,10,4,5,6};
+        int result[] =  sumofEvenandOdd(arr);
+        System.out.println("Sum of even numbers: " + result[0]);
+        System.out.println("Sum of odd numbers: " + result[1]);
+    }
+}
