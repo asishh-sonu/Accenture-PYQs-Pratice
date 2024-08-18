@@ -1,0 +1,45 @@
+Rohan is a kid who has just learned about creating words from
+alphabets. He has written some words in the notepad of his Father
+laptop. Now his father wants to find the longest word written by Rohan
+using a computer program. Write a program to find the longest string
+in a given list of strings.
+Example:
+Input: yes no number
+Output: The longest string is: number
+
+Answer ----------
+import java.util.Scanner;
+public class LongestWordfinder{
+    public static String findLongestWord(String[] words){
+        String longestword = "";
+        for (String word : words){
+            if(word.length()>longestword.length()){
+                longestword= word;
+            }
+        }
+        return longestword;
+    }
+      public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the words separated by spaces:");
+        String input = scanner.nextLine(); // Input: yes no number
+        
+        String[] words = input.split(" "); // Split the input into words based on spaces
+        String longestWord = findLongestWord(words); // Call the function to find the longest word
+
+        System.out.println("The longest string is: " + longestWord); // Output the longest string
+        scanner.close(); // Close the scanner
+    }
+    
+}
+
+
+
+
+
+for (int i = 0; i < words.length; i++) {
+    String word = words[i];
+    if (word.length() > longestWord.length()) {
+        longestWord = word;
+    }
+}
