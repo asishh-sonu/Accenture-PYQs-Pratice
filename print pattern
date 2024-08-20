@@ -1,0 +1,19 @@
+print --
+333222111
+332211
+321
+
+answer -- 
+class Asish{
+    public static void main(String args[]){
+        int n = 3;
+        for(int  i=n;i>0;i--){  //for printing lines
+            for(int j =n;j>0;j--){ //for printing the numbers
+                for(int k = 0;k<i;k++){ // for printing the counts of the number
+                    System.out.print(j);
+                }
+            }
+            System.out.println();
+        }
+    }
+}
