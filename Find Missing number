@@ -1,0 +1,56 @@
+You have been given an array containing N distinct integers taken from the range 1 to N+1.
+This means there is one integer missing from the range. Your task is to write a program to find and return the missing integer.
+
+Input:
+
+• An integer N (1 <= N <= 10^5) representing the number of elements in the array,
+
+• N integers a1, a2, aN1 <= N+1) representing the elements of the array Each element is distinct
+
+Input:
+size of the array : 7 
+ 1 2 4 6 3 7 8
+
+output : 5
+
+
+Answer --- 
+import java.util.Scanner;
+
+public class MissingNumber {
+
+    public static int findMissingNumber(int[] arr, int N) {
+        // Calculate the expected sum of the first N+1 natural numbers
+       int totalsum = (N+1)*(N+2)/2;
+       int arraysum =0;
+       for(int i=0;i<arr.length;i++){
+           arraysum +=arr[i];
+       }
+       return totalsum - arraysum;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Input: size of the array
+        int N = sc.nextInt();
+        int[] arr = new int[N];
+        
+        // Input: elements of the array
+        for (int i = 0; i < N; i++) {
+            arr[i] = sc.nextInt();
+        }
+        
+        // Find the missing number
+        int missingNumber = findMissingNumber(arr, N);
+        
+        // Output the missing number
+        System.out.println("Missing number: " + missingNumber);
+        
+        sc.close();
+    }
+}
+Output --- 
+7
+1 2 3 4 6 7 8
+Missing number: 5
