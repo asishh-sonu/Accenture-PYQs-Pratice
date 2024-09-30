@@ -1,0 +1,22 @@
+take a number N as input and check if it can be divied into two even distinct parts
+
+ans - 
+import java.util.Scanner;
+
+public class Divied{
+    public static boolean canbeDivide(int N){
+        return(N%2==0 && N>=6);
+    }
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number:");
+        int N = sc.nextInt();
+        
+        if(canbeDivide(N)){
+            System.out.println(N+"  be divied.");
+        }else{
+            System.out.println(N+" can't be divied.");
+        }
+        
+    }
+}
