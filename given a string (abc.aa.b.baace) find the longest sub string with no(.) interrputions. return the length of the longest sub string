@@ -1,0 +1,39 @@
+given a string (abc.aa.b.baace) find the longest sub string with no(.) interrputions. return the length of the longest sub string
+
+
+
+import java.util.Scanner;
+ class LongestSubsString{
+    public static int longestSubStringwithoutdot(String str){
+        int maxLength=0;
+        int currentLength =0;
+        for(char ch:str.toCharArray()){
+            if(ch !='.'){
+                currentLength++;
+            }else{
+                if(currentLength>maxLength){
+                    maxLength=currentLength;
+                }
+                currentLength=0;
+            }
+        }
+        if(currentLength>maxLength){
+            maxLength = currentLength;
+        }
+        return maxLength;
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Take input string
+        System.out.print("Enter a string: ");
+        String str = scanner.nextLine();
+
+        // Find and print the length of the longest substring without interruptions
+        int result = longestSubStringwithoutdot(str);
+        System.out.println("The length of the longest substring without interruptions is: " + result);
+
+        scanner.close();
+    }
+
+}
