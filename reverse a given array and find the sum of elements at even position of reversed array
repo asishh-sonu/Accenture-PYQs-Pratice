@@ -1,0 +1,69 @@
+reverse a given array and find the sum of elements at even position of revesed array
+
+
+
+ans -
+import java.util.Scanner;
+
+public class ReverseArrayAndSum {
+
+    // Function to reverse the array
+    public static void reverseArray(int[] arr) {
+        int start = 0;
+        int end = arr.length - 1;
+
+        while (start < end) {
+            // Swap elements at start and end
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
+    // Function to calculate the sum of elements at even positions in the array
+    public static int sumOfEvenPositionElements(int[] arr) {
+        int sum = 0;
+
+        // Even positions in 0-indexed arrays are: 0, 2, 4, 6, etc.
+        for (int i = 0; i < arr.length; i += 2) {
+            sum += arr[i];
+        }
+
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Take input for the array size
+        System.out.print("Enter the size of the array: ");
+        int n = scanner.nextInt();
+
+        // Take input for the array elements
+        int[] arr = new int[n];
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        // Reverse the array
+        reverseArray(arr);
+
+        // Calculate the sum of elements at even positions in the reversed array
+        int sum = sumOfEvenPositionElements(arr);
+
+        // Output the reversed array
+        System.out.println("Reversed array:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        // Output the sum of elements at even positions
+        System.out.println("Sum of elements at even positions in the reversed array: " + sum);
+
+        scanner.close();
+    }
+}
